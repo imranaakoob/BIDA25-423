@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radiara | Checkout</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="logo">Radiara</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="checkout.html" class="active">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CHECKOUT SECTION -->
+  <section class="checkout-container">
+
+    <!-- LEFT: FORM -->
+    <div class="checkout-form">
+
+      <h2>Checkout</h2>
+      <p class="subtext">Complete your order below</p>
+
+      <form id="checkoutForm">
+
+        <h3>Billing Details</h3>
+
+        <input type="text" id="fullname" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="text" id="address" placeholder="Delivery Address" required>
+        <input type="text" id="city" placeholder="City" required>
+
+        <h3>Payment Details</h3>
+
+        <input type="text" id="cardName" placeholder="Name on Card" required>
+        <input type="text" id="cardNumber" placeholder="Card Number (1234 5678 9012 3456)" required>
+        
+        <div class="row">
+          <input type="text" id="expiry" placeholder="MM/YY" required>
+          <input type="text" id="cvv" placeholder="CVV" required>
+        </div>
+
+        <button type="submit" class="btn">Place Order</button>
+
+      </form>
+
+      <p id="message"></p>
+    </div>
+
+    <!-- RIGHT: ORDER SUMMARY -->
+    <div class="order-summary">
+
+      <h3>Your Order</h3>
+
+      <div class="item">
+        <span>Celestial Face Mask</span>
+        <span>R250</span>
+      </div>
+
+      <div class="item">
+        <span>Glow Serum</span>
+        <span>R320</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="total">
+        <strong>Total</strong>
+        <strong>R570</strong>
+      </div>
+
+      <button class="btn secondary">Apply Coupon</button>
+
+    </div>
+
+  </section>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
