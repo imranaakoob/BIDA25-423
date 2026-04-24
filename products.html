@@ -1,59 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Products</title>
+<meta charset="UTF-8">
+<title>Radiara Products</title>
 <link rel="stylesheet" href="styles.css">
 <script src="script.js" defer></script>
 </head>
+ 
 <body>
-
-<header>
-<div class="logo">Radiara</div>
+ 
+<header class="navbar">
+<div>Radiara</div>
 <nav>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="guides.html">Guides</a>
 <a href="products.html">Products</a>
 <a href="contact.html">Contact</a>
+<a href="checkout.html">Checkout</a>
 </nav>
 </header>
-
-<section class="section">
+ 
+<section class="hero">
 <h1>Radiara Collection</h1>
-
-<p>Cart: <span id="cart-count">0</span></p>
-
-<input type="text" id="search" placeholder="Search products" onkeyup="filterProducts()">
-
-<div class="products">
-
-<div class="card">
-<img src="images/serum.jpg">
-<h3>Glow Serum</h3>
-<p>$20</p>
-<button class="button" onclick="addToCart()">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/mist.jpg">
-<h3>Face Mist</h3>
-<p>$15</p>
-<button class="button" onclick="addToCart()">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/tea.jpg">
-<h3>Herbal Tea</h3>
-<p>$10</p>
-<button class="button" onclick="addToCart()">Add to Cart</button>
-</div>
-
-</div>
+<p>Every formula is designed to support skin health, hydration, and glow restoration.</p>
+<input type="text" id="search" onkeyup="filterProducts()" placeholder="Search our rituals...">
 </section>
-
-<footer>
-<p>© Radiara</p>
-</footer>
-
+ 
+<section class="grid">
+ 
+<div class="card">
+<h3>Glow Serum</h3>
+<p>Deep hydration serum that restores skin luminosity and improves texture over time.</p>
+<p><b>Key Benefit:</b> Brightening + hydration balance</p>
+<p><b>R20</b></p>
+<a href="#">Learn how to use →</a>
+</div>
+ 
+<div class="card">
+<h3>Celestial Face Mask</h3>
+<p>Detoxifying clay blend that removes impurities while maintaining skin softness.</p>
+<p><b>Key Benefit:</b> Clear pores + glow boost</p>
+<p><b>R21</b></p>
+<a href="#">Weekly ritual guide →</a>
+</div>
+ 
+<div class="card">
+<h3>Rose Toner Essence</h3>
+<p>Hydrating toner infused with rose water to calm inflammation and balance skin pH.</p>
+<p><b>Key Benefit:</b> Soothing + redness reduction</p>
+<p><b>R17</b></p>
+<a href="#">Layering guide →</a>
+</div>
+ 
+<div class="card">
+<h3>Hydra Glow Cream</h3>
+<p>Barrier-repairing moisturizer that locks in hydration for long-lasting softness.</p>
+<p><b>Key Benefit:</b> Skin barrier support</p>
+<p><b>R22</b></p>
+<a href="#">Night routine use →</a>
+</div>
+ 
+<div class="card">
+<h3>Radiance Face Oil</h3>
+<p>Botanical oil blend that enhances glow while restoring elasticity and smoothness.</p>
+<p><b>Key Benefit:</b> Glow sealing + nourishment</p>
+<p><b>R24</b></p>
+<a href="#">Oil layering method →</a>
+</div>
+ 
+<div class="card">
+<img src="images/bodyoil.png" alt="Golden Body Oil">
+<h3>Golden Body Oil</h3>
+<p>Luxurious oil that leaves your skin silky and luminous.</p>
+<p>$25</p>
+</div>
+ 
+<div class="card">
+<img src="images/bodyscrub.png" alt="Glow Body Scrub">
+<h3>Glow Body Scrub</h3>
+<p>Exfoliating scrub to smooth and renew your skin.</p>
+<p>$19</p>
+</div>
+ 
+ 
+<div class="card">
+<img src="images/hairserum.png" alt="Luminous Hair Serum">
+<h3>Luminous Hair Serum</h3>
+<p>Lightweight serum for shine, strength, and smoothness.</p>
+<p>$23</p>
+</div>
+ 
+<div class="card">
+<img src="images/wellnessdrops.png" alt="Wellness Elixir Drops">
+<h3>Wellness Elixir Drops</h3>
+<p>Herbal drops designed to support balance and vitality.</p>
+<p>$16</p>
+</div>
+<div class="card">
+<img src="images/calmingtea.png" alt="Calm Ritual Tea">
+<h3>Calm Ritual Tea</h3>
+<p>Relaxing tea blend to ease stress and promote calm energy.</p>
+<p>$12</p>
+</div>
+ 
+</div>
+ 
+</section>
+ 
 </body>
 </html>
+
