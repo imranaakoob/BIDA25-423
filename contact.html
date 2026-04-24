@@ -1,44 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact</title>
-<link rel="stylesheet" href="styles.css">
-<script src="script.js" defer></script>
+ <meta charset="UTF-8">
+ <title>Contact Radiara</title>
+ <link rel="stylesheet" href="styles.css">
+ <script src="script.js" defer></script>
 </head>
+ 
 <body>
-
-<header>
-<div class="logo">Radiara</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="guides.html">Guides</a>
-<a href="products.html">Products</a>
-<a href="contact.html">Contact</a>
-</nav>
+ 
+<header class="navbar">
+ <div class="logo">Radiara</div>
+ <nav>
+   <a href="index.html">Home</a>
+   <a href="about.html">About</a>
+   <a href="guides.html">Guides</a>
+   <a href="products.html">Products</a>
+   <a href="contact.html">Contact</a>
+   <a href="checkout.html">Checkout</a>
+ </nav>
 </header>
-
+ 
 <section class="hero">
-<h1>Contact Us</h1>
-<p>We’d love to hear from you.</p>
+ <h1>Connect With Radiara</h1>
+ <p>
+   We believe skincare is personal. Whether you need guidance, product support, or routine advice — we are here to help you build your glow journey.
+ </p>
 </section>
-
-<section class="section">
-<form onsubmit="return validateForm()">
-
-<input type="text" id="name" placeholder="Your Name">
-<input type="email" id="email" placeholder="Your Email">
-<textarea id="message" placeholder="Your Message"></textarea>
-
-<button class="button">Send</button>
-</form>
-
-<p id="form-msg"></p>
+ 
+<section class="grid">
+ 
+ <div class="card">
+ 
+   <h2>Radiara Support Philosophy</h2>
+ 
+   <p>
+     Radiara support is not just customer service — it is skincare guidance. 
+     Every message is treated as part of your personal glow journey.
+   </p>
+ 
+   <p>
+     We help you understand your skin type, recommend routines, and guide you through product selection based on your needs.
+   </p>
+ 
+   <p>
+     Our goal is not just to sell products — but to help you achieve long-term skin balance and confidence.
+    </p>
+ 
+   <h3>Contact Details</h3>
+ 
+   <p><b>Email:</b> support@radiara.com</p>
+   <p><b>Response Time:</b> 24–48 hours</p>
+ 
+   <h3>Follow Radiara</h3>
+   <p>
+     <a href="#">Instagram</a> | 
+     <a href="#">TikTok</a> | 
+     <a href="#">Pinterest</a>
+   </p>
+ 
+   <p style="font-style: italic; color:#a98bb0;">
+     “Glow is a ritual, not a rush.”
+   </p>
+ 
+ </div>
+ 
+ <div class="card">
+ 
+   <h2>Send Us a Message</h2>
+ 
+   <p>
+     Ask about skincare routines, product recommendations, or order support.
+   </p>
+ 
+   <form>
+ 
+     <input type="text" id="name" placeholder="Your Name" required>
+ 
+     <input type="email" id="email" placeholder="Your Email" required>
+ 
+     <textarea id="contact_message" placeholder="Write your message..." rows="6" required></textarea>
+ 
+     <button type="submit">Send Message</button>
+ 
+   </form>
+ 
+   <p id="form-msg-status"></p>
+ 
+ </div>
+ 
 </section>
-
+ 
 <footer>
-<p>© Radiara</p>
+  <p>© Radiara — Glow through care, knowledge, and balance.</p>
 </footer>
-
+ 
 </body>
 </html>
