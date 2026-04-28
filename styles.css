@@ -104,5 +104,18 @@ img {
   align-items: center;
   justify-content: center;
 }
+/* FORCE CONSTRAIN IMAGES */
+.card {
+  overflow: hidden; /* Prevents image from overlapping the card borders */
+  display: flex;
+  flex-direction: column;
+}
 
+.card img {
+  max-width: 100% !important; 
+  height: 200px !important; /* Forces a specific height so they don't get too big */
+  object-fit: contain !important; /* Ensures the whole image is visible without overlap */
+  margin-bottom: 10px;
+  flex-shrink: 0; /* Prevents the image from squishing or growing weirdly */
+}
 }
