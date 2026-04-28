@@ -134,5 +134,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 150);
     });
    });
- 
+ /* ================================
+     6. IMAGE CONSISTENCY CHECK
+  ================================== */
+  const allImages = document.querySelectorAll("img");
+
+  allImages.forEach(img => {
+    // Ensure images are fully opaque and visible once loaded
+    img.style.opacity = "0";
+    img.style.transition = "opacity 0.5s ease-in-out";
+
+    img.addEventListener("load", () => {
+      img.style.opacity = "1";
+    });
+
+    // Fallback: If an image is broken, don't let it ruin the layout
+    img.addEventListener("error", function() {
+      this.style.display = "none"; 
+    });
+  });
 });
