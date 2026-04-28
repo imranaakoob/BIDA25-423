@@ -167,4 +167,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Run once on load to set initial prices
   updateTotals();
+  /* ================================
+     8. PRODUCT SELECTION LOGIC
+  ================================== */
+  // Call this function when a user clicks a 'Buy' button on the Products page
+  window.addToCart = function(name, price) {
+    let cart = JSON.parse(localStorage.getItem('radiaraCart')) || [];
+    
+    // Check if item already exists
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.qty += 1;
+    } else {
+      cart.push({ name: name, price: price, qty: 1 });
+    }
+    
+    localStorage.setItem('radiaraCart', JSON.stringify(cart));
+    alert(name + " added to your ritual.");
+  };
 });
