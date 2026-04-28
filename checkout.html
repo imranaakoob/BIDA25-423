@@ -23,14 +23,14 @@
  
 <section class="hero">
  <h1>Finalize Your Glow Ritual</h1>
- <p>Secure checkout for your Radiara essentials.</p>
+ <p>Adjust your quantities and secure your essentials.</p>
 </section>
  
 <section class="grid">
  
  <!-- Left Side: Shipping & Payment -->
  <div class="card">
-   <h2>Shipping Details</h2>
+   <h2>Shipping & Payment</h2>
    <form id="checkoutForm" class="contact-form-layout">
      <input type="text" placeholder="Full Name" required>
      <input type="email" placeholder="Email Address" required>
@@ -41,8 +41,8 @@
         <input type="text" placeholder="Zip Code" required>
      </div>
  
-     <h2 style="margin-top: 20px;">Payment Information</h2>
-     <input type="text" placeholder="Card Number (0000 0000 0000 0000)" required>
+     <h3 style="margin-top: 20px;">Payment</h3>
+     <input type="text" placeholder="Card Number" required>
      
      <div style="display: flex; gap: 10px;">
         <input type="text" placeholder="MM/YY" required>
@@ -56,43 +56,50 @@
    <p id="checkout-message-status" style="margin-top: 15px; font-weight: 500;"></p>
  </div>
  
- <!-- Right Side: Order Summary -->
+ <!-- Right Side: Interactive Order Summary -->
  <div class="card" style="background: #fdf7ff; border: 1px dashed #c8a2c8;">
-   <h2>Order Summary</h2>
-   <div style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px;">
-     <p style="display: flex; justify-content: space-between;">
-       <span>Radiara Glow Serum</span>
-       <span>$42.00</span>
-     </p>
-     <p style="display: flex; justify-content: space-between;">
-       <span>Silk Scalp Oil</span>
-       <span>$35.00</span>
-     </p>
+   <h2>Your Selection</h2>
+   
+   <div style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
+     <!-- Item 1 -->
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+       <div>
+         <p style="margin:0; font-weight:500;">Radiara Glow Serum</p>
+         <small style="color: #666;">$42.00 each</small>
+       </div>
+       <input type="number" class="qty-input" data-price="42.00" value="1" min="0" style="width: 50px; padding: 5px;">
+     </div>
+
+     <!-- Item 2 -->
+     <div style="display: flex; justify-content: space-between; align-items: center;">
+       <div>
+         <p style="margin:0; font-weight:500;">Silk Scalp Oil</p>
+         <small style="color: #666;">$35.00 each</small>
+       </div>
+       <input type="number" class="qty-input" data-price="35.00" value="1" min="0" style="width: 50px; padding: 5px;">
+     </div>
    </div>
    
-   <p style="display: flex; justify-content: space-between; font-weight: bold;">
+   <!-- Calculations -->
+   <p style="display: flex; justify-content: space-between;">
      <span>Subtotal</span>
-     <span>$77.00</span>
+     <span id="summary-subtotal">$77.00</span>
    </p>
    <p style="display: flex; justify-content: space-between; color: #666;">
      <span>Shipping</span>
      <span>FREE</span>
    </p>
    <hr style="border: 0; border-top: 1px solid #c8a2c8; margin: 15px 0;">
-   <p style="display: flex; justify-content: space-between; font-size: 20px; font-weight: bold; color: #1a1a1a;">
+   <p style="display: flex; justify-content: space-between; font-size: 20px; font-weight: bold;">
      <span>Total</span>
-     <span>$77.00</span>
-   </p>
-   
-   <p style="font-size: 12px; color: #a98bb0; margin-top: 20px; text-align: center;">
-     ✨ Secure SSL Encrypted Checkout
+     <span id="summary-total">$77.00</span>
    </p>
  </div>
  
 </section>
  
 <footer>
-  <p>© Radiara — Your journey to balance starts here.</p>
+  <p>© Radiara — Rituals for the modern soul.</p>
 </footer>
  
 </body>
