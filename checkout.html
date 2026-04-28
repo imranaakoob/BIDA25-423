@@ -1,47 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Checkout Radiara</title>
-<link rel="stylesheet" href="styles.css">
-<script src="script.js" defer></script>
+ <meta charset="UTF-8">
+ <title>Radiara Checkout</title>
+ <link rel="stylesheet" href="styles.css">
+ <script src="script.js" defer></script>
 </head>
  
 <body>
  
 <header class="navbar">
-<div>Radiara</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="guides.html">Guides</a>
-<a href="products.html">Products</a>
-<a href="contact.html">Contact</a>
-<a href="checkout.html">Checkout</a>
-</nav>
+ <div class="logo">Radiara</div>
+ <nav>
+   <a href="index.html">Home</a>
+   <a href="about.html">About</a>
+   <a href="guides.html">Guides</a>
+   <a href="products.html">Products</a>
+   <a href="contact.html">Contact</a>
+   <a href="checkout.html">Checkout</a>
+ </nav>
 </header>
  
 <section class="hero">
-<h1>Checkout</h1>
-<p>Complete your Radiara glow ritual order below.</p>
+ <h1>Finalize Your Glow Ritual</h1>
+ <p>Secure checkout for your Radiara essentials.</p>
 </section>
  
-<section class="card">
+<section class="grid">
  
-<form id="checkoutForm">
+ <!-- Left Side: Shipping & Payment -->
+ <div class="card">
+   <h2>Shipping Details</h2>
+   <form id="checkoutForm" class="contact-form-layout">
+     <input type="text" placeholder="Full Name" required>
+     <input type="email" placeholder="Email Address" required>
+     <input type="text" placeholder="Shipping Address" required>
+     
+     <div style="display: flex; gap: 10px;">
+        <input type="text" placeholder="City" required>
+        <input type="text" placeholder="Zip Code" required>
+     </div>
  
-<input type="text" placeholder="Full Name" required>
-<input type="email" placeholder="Email Address" required>
-<input type="text" placeholder="Delivery Address" required>
+     <h2 style="margin-top: 20px;">Payment Information</h2>
+     <input type="text" placeholder="Card Number (0000 0000 0000 0000)" required>
+     
+     <div style="display: flex; gap: 10px;">
+        <input type="text" placeholder="MM/YY" required>
+        <input type="text" placeholder="CVV" required>
+     </div>
  
-<button type="submit">Place Order</button>
+     <div class="form-button-wrapper" style="margin-top: 20px;">
+        <button type="submit">Complete Order</button>
+     </div>
+   </form>
+   <p id="checkout-message-status" style="margin-top: 15px; font-weight: 500;"></p>
+ </div>
  
-</form>
- 
-<p id="checkout-message-status"></p>
+ <!-- Right Side: Order Summary -->
+ <div class="card" style="background: #fdf7ff; border: 1px dashed #c8a2c8;">
+   <h2>Order Summary</h2>
+   <div style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px;">
+     <p style="display: flex; justify-content: space-between;">
+       <span>Radiara Glow Serum</span>
+       <span>$42.00</span>
+     </p>
+     <p style="display: flex; justify-content: space-between;">
+       <span>Silk Scalp Oil</span>
+       <span>$35.00</span>
+     </p>
+   </div>
+   
+   <p style="display: flex; justify-content: space-between; font-weight: bold;">
+     <span>Subtotal</span>
+     <span>$77.00</span>
+   </p>
+   <p style="display: flex; justify-content: space-between; color: #666;">
+     <span>Shipping</span>
+     <span>FREE</span>
+   </p>
+   <hr style="border: 0; border-top: 1px solid #c8a2c8; margin: 15px 0;">
+   <p style="display: flex; justify-content: space-between; font-size: 20px; font-weight: bold; color: #1a1a1a;">
+     <span>Total</span>
+     <span>$77.00</span>
+   </p>
+   
+   <p style="font-size: 12px; color: #a98bb0; margin-top: 20px; text-align: center;">
+     ✨ Secure SSL Encrypted Checkout
+   </p>
+ </div>
  
 </section>
+ 
+<footer>
+  <p>© Radiara — Your journey to balance starts here.</p>
+</footer>
  
 </body>
 </html>
-
