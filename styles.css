@@ -74,4 +74,35 @@ button:hover {
 /* LINKS */
 a {
  color: #b57edc;
+ /* ================================
+   NEW: GLOBAL IMAGE UNIFORMITY
+================================== */
+
+/* Ensures all images inside cards have the same height and fill the space */
+.card img {
+  width: 100%;
+  height: 250px; /* Set a fixed height for consistency */
+  object-fit: contain; /* This ensures the FULL image is visible without cropping */
+  background-color: #fdf7ff; /* Optional: adds a soft background if image aspect ratios differ */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* General site-wide image safety */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* If you have specific product grid images you want to be perfectly square */
+.product-image-container {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 }
