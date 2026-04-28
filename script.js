@@ -185,4 +185,57 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem('radiaraCart', JSON.stringify(cart));
     alert(name + " added to your ritual.");
   };
+  /* ================================
+     9. LIVE CHECKOUT ENGINE
+  ================================== */
+  const container = document.getElementById('cart-items-container');
+  const subtotalEl = document.getElementById('summary-subtotal');
+  const totalEl = document.getElementById('summary-total');
+
+  function renderCart() {
+    const cart = JSON.parse(localStorage.getItem('radiaraCart')) || [];
+    if (!container) return;
+
+    if (cart.length === 0) {
+      container.innerHTML = '<p style="color: #666; font-style: italic;">Your cart is empty.</p>';
+      return;
+    }
+
+    container.innerHTML = ''; // Clear "Empty" message
+    let grandTotal = 0;
+
+    cart.forEach((item, index) => {
+      grandTotal += item.price * item.qty;
+      
+      const itemRow = document.createElement('div');
+      itemRow.style = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;";
+      itemRow.innerHTML = `
+        <div>
+          <p style="margin:0; font-weight:500;">${item.name}</p>
+          <small style="color: #666;">$${item.price.toFixed(2)} each</small>
+        </div>
+        <input type="number" value="${item.qty}" min="0" 
+               onchange="updateQty(${index}, this.value)" 
+               style="width: 45px; padding: 5px; border: 1px solid #ccc;">
+      `;
+      container.appendChild(itemRow);
+    });
+
+    subtotalEl.textContent = `$${grandTotal.toFixed(2)}`;
+    totalEl.textContent = `$${grandTotal.toFixed(2)}`;
+  }
+
+  window.updateQty = function(index, newQty) {
+    let cart = JSON.parse(localStorage.getItem('radiaraCart'));
+    if (parseInt(newQty) === 0) {
+      cart.splice(index, 1); // Remove item if quantity is 0
+    } else {
+      cart[index].qty = parseInt(newQty);
+    }
+    localStorage.setItem('radiaraCart', JSON.stringify(cart));
+    renderCart();
+  };
+
+  // Run on load
+  renderCart();
 });
