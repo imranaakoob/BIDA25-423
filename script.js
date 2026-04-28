@@ -57,7 +57,35 @@ document.addEventListener("DOMContentLoaded", function () {
        }
        return;
     }
- 
+ /* ================================
+     2. PRODUCT SEARCH FILTER
+  ================================== */
+  window.filterProducts = function () {
+    const input = document.getElementById("search")?.value.toLowerCase();
+    const grid = document.querySelector(".grid");
+    if (!grid) return;
+    
+    const cards = grid.getElementsByClassName("card"); // <--- Find this line!
+
+    /* --- ADD THESE LINES START --- */
+    for (let i = 0; i < cards.length; i++) {
+      const img = cards[i].querySelector("img");
+      if (img) {
+        img.style.height = "200px";     // Forces uniform height
+        img.style.width = "100%";      // Fits width of card
+        img.style.objectFit = "contain"; // Shows FULL image, no overlap
+      }
+    }
+    /* --- ADD THESE LINES END --- */
+
+    if (!input) {
+       for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = "block";
+       }
+       return;
+    }
+    
+    // ... rest of your code ...
     for (let i = 0; i < cards.length; i++) {
       // Get only text content within the card, ignoring HTML
       let text = cards[i].innerText.toLowerCase();
