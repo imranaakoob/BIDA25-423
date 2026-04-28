@@ -90,3 +90,33 @@ button:hover {
 a {
  color: #b57edc;
 }
+/* CONTACT FORM LAYOUT FIX */
+.contact-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-form-layout input, 
+.contact-form-layout textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333; /* Matches the clean black/white border look */
+  border-radius: 0px;      /* Sharp corners like the diagram */
+  box-sizing: border-box;
+}
+
+.form-button-wrapper {
+  display: flex;
+  justify-content: flex-end; /* Pushes the button to the right */
+}
+
+.form-button-wrapper button {
+  width: auto;
+  padding: 10px 40px;
+  background: #f8c8dc;
+  border: 1px solid #333;
+  border-radius: 0px; /* Square button to match the diagram */
+  cursor: pointer;
+}
