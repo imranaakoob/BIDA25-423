@@ -134,3 +134,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
  
 });
+document.addEventListener("DOMContentLoaded", function () {
+ 
+  /* ... [KEEP ALL PREVIOUS SECTIONS 1-6 EXACTLY THE SAME] ... */
+
+  /* ================================
+     7. INTERACTIVE CHECKOUT CALCULATOR
+  ================================== */
+  const qtyInputs = document.querySelectorAll('.qty-input');
+  const subtotalElement = document.getElementById('summary-subtotal');
+  const totalElement = document.getElementById('summary-total');
+
+  function updateTotals() {
+    let subtotal = 0;
+    
+    qtyInputs.forEach(input => {
+      const price = parseFloat(input.getAttribute('data-price'));
+      const quantity = parseInt(input.value) || 0;
+      subtotal += price * quantity;
+    });
+
+    if (subtotalElement && totalElement) {
+      subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+      totalElement.textContent = `$${subtotal.toFixed(2)}`;
+    }
+  }
+
+  // Listen for quantity changes
+  qtyInputs.forEach(input => {
+    input.addEventListener('input', updateTotals);
+  });
+
+  // Run once on load to set initial prices
+  updateTotals();
+});
