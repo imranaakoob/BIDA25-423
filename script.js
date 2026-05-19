@@ -211,8 +211,8 @@ document.addEventListener("DOMContentLoaded", function () {
       itemRow.style = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;";
       itemRow.innerHTML = `
         <div>
-          <p style="margin:0; font-weight:500;">R {item.name}</p>
-          <small style="color: #666;">R {item.price.toFixed(2)} each</small>
+          <p style="margin:0; font-weight:500;">R ${item.name}</p>
+          <small style="color: #666;">R ${item.pricetoFixed(2)} each</small>
         </div>
         <input type="number" value="R {item.qty}" min="0" 
                onchange="updateQty(R {index}, this.value)" 
@@ -221,8 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
       container.appendChild(itemRow);
     });
 
-    subtotalEl.textContent = `R {grandTotal.toFixed(2)}`;
-    totalEl.textContent = `R {grandTotal.toFixed(2)}`;
+    subtotalEl.textContent = `R ${grandTotal.toFixed(2)}`;
+    totalEl.textContent = `R ${grandTotal.toFixed(2)}`;
   }
 
   window.updateQty = function(index, newQty) {
