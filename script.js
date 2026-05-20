@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
- 
   /* ================================
      1. CONTACT FORM VALIDATION
   ================================== */
@@ -132,11 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
     img.style.objectFit = "contain";
     img.style.display = "block";
   });
- 
-});
-document.addEventListener("DOMContentLoaded", function () {
- 
-  /* ... [KEEP ALL PREVIOUS SECTIONS 1-6 EXACTLY THE SAME] ... */
+
 
   /* ================================
      7. INTERACTIVE CHECKOUT CALCULATOR
@@ -155,8 +150,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (subtotalElement && totalElement) {
-      subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-      totalElement.textContent = `$${subtotal.toFixed(2)}`;
+      subtotalElement.textContent = `R ${subtotal.toFixed(2)}`;
+      totalElement.textContent = `R ${subtotal.toFixed(2)}`;
     }
   }
 
@@ -167,6 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Run once on load to set initial prices
   updateTotals();
+
+
   /* ================================
      8. PRODUCT SELECTION LOGIC
   ================================== */
@@ -185,6 +182,8 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem('radiaraCart', JSON.stringify(cart));
     alert(name + " added to your ritual.");
   };
+
+
   /* ================================
      9. LIVE CHECKOUT ENGINE
   ================================== */
@@ -211,18 +210,20 @@ document.addEventListener("DOMContentLoaded", function () {
       itemRow.style = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;";
       itemRow.innerHTML = `
         <div>
-          <p style="margin:0; font-weight:500;">R ${item.name}</p>
-          <small style="color: #666;">R ${item.pricetoFixed(2)} each</small>
+          <p style="margin:0; font-weight:500;">${item.name}</p>
+          <small style="color: #666;">R ${item.price.toFixed(2)} each</small>
         </div>
-        <input type="number" value="R {item.qty}" min="0" 
-               onchange="updateQty(R {index}, this.value)" 
+        <input type="number" value="${item.qty}" min="0" 
+               onchange="updateQty(${index}, this.value)" 
                style="width: 45px; padding: 5px; border: 1px solid #ccc;">
       `;
       container.appendChild(itemRow);
     });
 
-    subtotalEl.textContent = `R ${grandTotal.toFixed(2)}`;
-    totalEl.textContent = `R ${grandTotal.toFixed(2)}`;
+    if (subtotalEl && totalEl) {
+      subtotalEl.textContent = `R ${grandTotal.toFixed(2)}`;
+      totalEl.textContent = `R ${grandTotal.toFixed(2)}`;
+    }
   }
 
   window.updateQty = function(index, newQty) {
